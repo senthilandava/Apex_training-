@@ -1,0 +1,88 @@
+
+
+
+
+def get_number(prompt):
+    """Safely get a float number from user input."""
+    while True:
+        try:
+            return float(input(prompt))
+        except ValueError:
+            print("❌ Invalid input. Please enter a valid number.")
+
+def safe_division(a, b):
+    """Performs division and handles division by zero."""
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return "Undefined (division by zero)"
+
+def safe_floor_division(a, b):
+    """Performs floor division and handles division by zero."""
+    try:
+        return a // b
+    except ZeroDivisionError:
+        return "Undefined (division by zero)"
+
+def safe_modulus(a, b):
+    """Performs modulus and handles division by zero."""
+    try:
+        return a % b
+    except ZeroDivisionError:
+        return "Undefined (division by zero)"
+
+def main():
+    print("=== Python Arithmetic Operators Demo ===\n")
+    
+    # Get user inputs
+    num1 = get_number("Enter the first number: ")
+    num2 = get_number("Enter the second number: ")
+    
+    print("\n--- Results ---")
+    print(f"{num1} + {num2} = {num1 + num2}")       # Addition
+    print(f"{num1} - {num2} = {num1 - num2}")       # Subtraction
+    print(f"{num1} * {num2} = {num1 * num2}")       # Multiplication
+    print(f"{num1} / {num2} = {safe_division(num1, num2)}")  # Division
+    print(f"{num1} // {num2} = {safe_floor_division(num1, num2)}")  # Floor Division
+    print(f"{num1} % {num2} = {safe_modulus(num1, num2)}")   # Modulus
+    print(f"{num1} ** {num2} = {num1 ** num2}")     # Exponentiation
+    
+    print("\n=== End of Program ===")
+
+if __name__ == "__main__":
+    main()
+Features
+Covers all arithmetic operators:
+
++ Addition
+- Subtraction
+* Multiplication
+/ Division
+// Floor Division
+% Modulus
+** Exponentiation
+Error Handling:
+
+Prevents crashes from invalid input.
+Handles division by zero gracefully.
+User-Friendly Output:
+
+Clearly shows each operation and result.
+Example Run
+
+Copy code
+=== Python Arithmetic Operators Demo ===
+
+Enter the first number: 10
+Enter the second number: 3
+
+--- Results ---
+10.0 + 3.0 = 13.0
+10.0 - 3.0 = 7.0
+10.0 * 3.0 = 30.0
+10.0 / 3.0 = 3.3333333333333335
+10.0 // 3.0 = 3.0
+10.0 % 3.0 = 1.0
+10.0 ** 3.0 = 1000.0
+
+=== End of Program ===
